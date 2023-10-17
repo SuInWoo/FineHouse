@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt.house.repo.HouseMapper">
+	<select id="selectSido" resultType="com.ssafy.pjt.house.dto.RegionCodeDto">
+		SELECT LEFT(SIDOCODE, 2) SIDOCODE, SIDONAME
+		FROM SIDOCODE
+		ORDER BY SIDOCODE
+	</select>
+	
+	<select id="selectGugun" parameterType="string" resultType="com.ssafy.pjt.house.dto.RegionCodeDto">
+		SELECT LEFT(GUGUNCODE, 5) GUGUNCODE, GUGUNNAME
+		FROM GUGUNCODE
+		WHERE LEFT(GUGUNCODE, 2) = #{sido}
+		ORDER BY GUGUNCODE
+	</select>
+	
+	<select id="selectDong" parameterType="string" resultType="com.ssafy.pjt.house.dto.RegionCodeDto">
+		SELECT DISTINCT DONGNAME, DONGCODE, SIDONAME 
+		FROM DONGCODE
+		WHERE LEFT(DONGCODE, 5) = #{gugun} and DONGNAME not like ""
+		ORDER BY DONGNAME
+	</select>
+</mapper>

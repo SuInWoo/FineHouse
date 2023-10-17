@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt.like.repo.LikeMapper">
+	
+	<select id="selectAll" parameterType="String" resultType="likeDto">
+		SELECT *
+		FROM LIKE_TB
+		WHERE ID = #{id}
+	</select>
+	
+	<delete id="delete" parameterType="likeDto">
+		DELETE FROM LIKE_TB WHERE ID = #{id} and JIBUN = #{jibun} and DONG = #{dong} and FLOOR = #{floor}
+	</delete>
+	
+	<select id="selectOne" parameterType="likeDto" resultType="likeDto">
+		SELECT *
+		FROM LIKE_TB
+		WHERE ID = #{id} and JIBUN = #{jibun} and DONG = #{dong} and FLOOR = #{floor} and SIDONAME = #{sidoname}
+	</select>
+	
+	<insert id="insert" parameterType="likeDto">
+		INSERT INTO LIKE_TB(NAME, SIDONAME, ID, DONG, JIBUN, TYPE, WAL, JEON, FLOOR, IMG, CONSTRUCTION, AREA)
+		VALUES(#{name}, #{sidoname}, #{id}, #{dong}, #{jibun}, #{type}, #{wal}, #{jeon}, #{floor}, #{img}, #{construction}, #{area})
+	</insert>
+	
+</mapper>

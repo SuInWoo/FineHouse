@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt.member.repo.MemberMapper">
+	
+	<select id="selectOne" parameterType="String" resultType="memberDto">
+		SELECT USERID, NAME, EMAIL, ADDR, PHONE, ADMIN
+		FROM MEMBER_TB
+		WHERE USERID = #{userId}
+	</select>
+	
+	<select id="selectAll" resultType="memberDto">
+		SELECT USERID, NAME, EMAIL, ADDR, PHONE, ADMIN
+		FROM MEMBER_TB
+	</select> 
+	
+	<insert id="insert" parameterType="memberDto">
+		INSERT INTO MEMBER_TB(USERID, USERPWD, NAME, EMAIL, ADDR, PHONE, ADMIN)
+		VALUES(#{userId}, #{userPwd}, #{name}, #{email}, #{addr}, #{phone}, #{admin})
+	</insert>
+	
+	<delete id="delete" parameterType="memberDto">
+		DELETE FROM MEMBER_TB WHERE USERID = #{userId}
+	</delete>
+	
+	<select id="login" parameterType="memberDto" resultType="memberDto">
+		select name, userid 
+		from member_tb
+		where userid = #{userId} and userpwd = #{userPwd}
+	</select>
+	
+	<select id="userInfo" parameterType="String" resultType="memberDto">
+		select name, userid, email, phone, addr, admin
+		from member_tb
+		where userid = #{userId}
+	</select>
+	
+</mapper>

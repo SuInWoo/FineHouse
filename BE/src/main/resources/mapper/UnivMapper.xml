@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt.univ.repo.UnivMapper">
+
+	<select id="selectAll" resultType="univDto">
+		SELECT distinct addr,
+		type,name, no, univtype, sidoname, zip, homepage, lat, lng
+		FROM
+		UNIV_TB;
+	</select>
+</mapper>

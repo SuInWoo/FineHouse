@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt.board.repo.BoardMapper">
+	<insert id="write" parameterType="com.ssafy.pjt.board.dto.BoardDto">
+		INSERT INTO BOARD_TB(TITLE, WRITER, REGISTERTIME, CONTENT)
+		VALUES(#{title}, #{writer}, now(), #{content})
+	</insert>
+
+	<select id="selectAll" resultMap="rrr">
+		SELECT BNO, TITLE, WRITER, CONTENT, REGISTERTIME FROM BOARD_TB
+	</select>
+	
+	<resultMap type="BoardDto" id="rrr">
+	</resultMap>
+
+	<select id="getDetail" parameterType="int"
+		resultType="com.ssafy.pjt.board.dto.BoardDto">
+		SELECT * FROM BOARD_TB WHERE BNO=#{bno}
+	</select>
+	
+	<update id="getModify" parameterType="com.ssafy.pjt.board.dto.BoardDto">
+		UPDATE BOARD_TB
+		SET TITLE=#{title},WRITER= #{writer}, 
+		REGISTER_TIME=now(),CONTENT= #{content}
+		WHERE BNO=#{bno}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM BOARD_TB WHERE BNO = #{bno}
+	</delete>
+
+</mapper>
