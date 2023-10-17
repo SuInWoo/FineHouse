@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "GTFont";
+  src: url("@/assets/fonts/GwangyangTouching.ttf") format("truetype");
+  /* 다른 형식의 폰트 파일이 있다면 format을 적절히 수정합니다. */
+  /* 예: woff, woff2 등 */
+}
+
+@font-face {
+  font-family: "KCCDodam";
+  src: url("@/assets/fonts/KCCDodamdodam.ttf") format("truetype");
+  /* 다른 형식의 폰트 파일이 있다면 format을 적절히 수정합니다. */
+  /* 예: woff, woff2 등 */
+}
