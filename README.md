@@ -22,10 +22,8 @@
 FE
 |사용기술| 버전 |
 |-|-|
-|React |18.2.0
- Node.js|18.16.1
-TypeScript | 
-React-Redux|  8.1.1 
+|Vue.js|2|
+|Node.js|18.16.1|
 
 
 
@@ -35,10 +33,7 @@ BE
 | Java | 11 |
 | Springboot | 2.7.14 |
 | gradle | 8.1.1 |
-| Openvidu | 2.19.0 |
-| FCM | 7.1.1 |
 | Lombok | 1.18.24 |
-| websocket | 2.7.2 |
 
 ## 사용 기술
 ### Environment
