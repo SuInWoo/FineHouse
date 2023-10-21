@@ -88,15 +88,6 @@ BE
 - 찜한 집 조회
 ![전/월세 조회](pjt_img/like_list_wal.png)
 
-
-## 📋 아키텍쳐
-
-### FLOW
-![FLOW](./PJT_flow.PNG)
-
-### ERD
-![ERD](./ERD.png)
-
 ## 🤝 팀 소개
 
 |![팀장](https://secure.gravatar.com/avatar/4d5b40714cbd62edcde8c9b9f1ad2069?s=80&d=identicon)|![배수빈](https://secure.gravatar.com/avatar/9169f2910f62eee22e3523b967c4488a?s=80&d=identicon)|
